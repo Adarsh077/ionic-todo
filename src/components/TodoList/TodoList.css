@@ -1,0 +1,10 @@
+.todos {
+  margin-top: 40px;
+  margin-bottom: 0px !important;
+}
+.todos .title {
+  padding: 0px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #202020 !important;
+}

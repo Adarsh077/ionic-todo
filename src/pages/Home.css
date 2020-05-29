@@ -1,0 +1,16 @@
+.app {
+  position: relative;
+}
+
+.animate__bounceInUp,
+.animate__bounceOutDown {
+  --animate-duration: 650ms;
+}
+
+.click_animation {
+  transition: all 0.1s;
+}
+
+.click_animation:active {
+  transform: scale(0.95);
+}
