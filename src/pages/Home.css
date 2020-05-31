@@ -2,8 +2,7 @@
   position: relative;
 }
 
-.animate__bounceInUp,
-.animate__bounceOutDown {
+.animate__animated {
   --animate-duration: 650ms;
 }
 

@@ -4,11 +4,8 @@ import "./AddTodo.css";
 import {
   IonIcon,
   IonTitle,
-  IonInput,
-  IonItem,
-  IonDatetime,
-  IonLabel,
 } from "@ionic/react";
+import TodoForm from "../TodoForm";
 
 class AddTodo extends Component {
   constructor() {
@@ -26,6 +23,7 @@ class AddTodo extends Component {
       500
     );
   };
+
   render() {
     const { showModal, showBounceout } = this.state;
     return (
@@ -48,31 +46,10 @@ class AddTodo extends Component {
                   showBounceout
                     ? "animate__bounceOutDown"
                     : "animate__bounceInUp"
-                }`}
+                  }`}
               >
                 <IonTitle className="title">Create a new Task</IonTitle>
-                <div className="form">
-                  <IonInput
-                    className="form-item click_animation"
-                    type="text"
-                    placeholder="Enter Task"
-                  ></IonInput>
-                  <IonInput
-                    className="form-item click_animation"
-                    type="text"
-                    placeholder="Note"
-                  ></IonInput>
-                  <IonItem className="form-item click_animation">
-                    <IonLabel>DD/MM/YYYY</IonLabel>
-                    <IonDatetime displayFormat="DD MM YYYY"></IonDatetime>
-                  </IonItem>
-                </div>
-                <div
-                  className="addtodo-btn click_animation"
-                  onClick={this.handleModalHide}
-                >
-                  Save Task
-                </div>
+                <TodoForm {...this.props} handleModalHide={this.handleModalHide} />
               </div>
             </div>
           </div>
