@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ionic App</title>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Ionic App</title>
+    <base href="/" />
 
-  <base href="/" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
 
-  <meta name="color-scheme" content="light dark" />
-  <meta name="viewport"
-    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="%PUBLIC_URL%/assets/icon/favicon.png"
+    />
 
-  <link rel="shortcut icon" type="image/png" href="%PUBLIC_URL%/assets/icon/favicon.png" />
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Ionic App" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+  </head>
 
-  <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="Ionic App" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-</head>
+  <style>
+    @font-face {
+      font-family: "Sebino Regular";
+      src: url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.eot");
+      /* IE9*/
+      src: url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.eot?#iefix")
+          format("embedded-opentype"),
+        /* IE6-IE8 */
+          url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.woff2")
+          format("woff2"),
+        /* chrome、firefox */
+          url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.woff")
+          format("woff"),
+        /* chrome、firefox */
+          url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.ttf")
+          format("truetype"),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+          url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.svg#Sebino Regular")
+          format("svg");
+      /* iOS 4.1- */
+    }
 
-<style>
-  @font-face {
-    font-family: "Sebino Regular";
-    src: url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.eot");
-    /* IE9*/
-    src: url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.eot?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */
-      url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.woff2") format("woff2"),
-      /* chrome、firefox */
-      url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.woff") format("woff"),
-      /* chrome、firefox */
-      url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.ttf") format("truetype"),
-      /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-      url("%PUBLIC_URL%/assets/fonts/4e2a44223ab20891f50f16b7f54b595f.svg#Sebino Regular") format("svg");
-    /* iOS 4.1- */
-  }
+    * {
+      font-family: "Sebino Regular";
+    }
+  </style>
 
-  * {
-    font-family: "Sebino Regular";
-  }
-</style>
-
-<body>
-  <div id="root"></div>
-</body>
-
+  <body>
+    <div id="root"></div>
+  </body>
 </html>

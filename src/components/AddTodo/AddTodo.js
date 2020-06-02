@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import { add } from "ionicons/icons";
 import "./AddTodo.css";
-import {
-  IonIcon,
-  IonTitle,
-} from "@ionic/react";
-import TodoForm from "../TodoForm";
+import { IonIcon } from "@ionic/react";
+import TodoModal from "../TodoModal/TodoModal";
 
 class AddTodo extends Component {
   constructor() {
@@ -16,19 +13,13 @@ class AddTodo extends Component {
     };
   }
 
-  handleModalHide = () => {
-    this.setState({ showBounceout: true });
-    setTimeout(
-      () => this.setState({ showModal: false, showBounceout: false }),
-      500
-    );
-  };
+  closeModal = () => this.setState({ showModal: false });
 
   render() {
-    const { showModal, showBounceout } = this.state;
+    const { showModal } = this.state;
     return (
       <div>
-        <div className="addtodo-btn click_animation">
+        <div className="addtodo-btn animate_click">
           <div
             className="btn"
             onClick={() => this.setState({ showModal: true })}
@@ -38,21 +29,11 @@ class AddTodo extends Component {
           </div>
         </div>
         {showModal && (
-          <div className="addtodo-modal-container">
-            <div className="addtodo-container">
-              <div className="backdrop" onClick={this.handleModalHide}></div>
-              <div
-                className={`addtodo-modal animate__animated ${
-                  showBounceout
-                    ? "animate__bounceOutDown"
-                    : "animate__bounceInUp"
-                  }`}
-              >
-                <IonTitle className="title">Create a new Task</IonTitle>
-                <TodoForm {...this.props} handleModalHide={this.handleModalHide} />
-              </div>
-            </div>
-          </div>
+          <TodoModal
+            title="Create a new Task"
+            handleSubmit={this.props.handleSubmit}
+            closeModal={this.closeModal}
+          />
         )}
       </div>
     );

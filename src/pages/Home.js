@@ -1,48 +1,66 @@
 import { IonContent, IonPage } from "@ionic/react";
 import React, { Component } from "react";
-import { DateBar, TodoList, AddTodo } from "../components";
+import { TodoList, AddTodo } from "../components";
 import "./Home.css";
+import { Plugins } from "@capacitor/core";
+
+const { Storage } = Plugins;
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      todos: [{ task: "Buy a bread", note: "Some note", date: "May" }]
-    }
+      todos: [],
+    };
+    this.getTodos();
   }
 
-  addTodo = newTodo => {
+  getTodos = async () => {
+    const ret = await Storage.get({ key: "todos" });
+    this.setState({ todos: JSON.parse(ret.value) || [] });
+  };
+
+  setTodos = async () => {
+    await Storage.set({
+      key: "todos",
+      value: JSON.stringify(this.state.todos),
+    });
+  };
+
+  addTodo = (newTodo) => {
     const todos = Array.from(this.state.todos);
     todos.push(newTodo);
-    this.setState({ todos });
-  }
+    this.setState({ todos }, this.setTodos);
+  };
 
   editTodo = (idx, newTodo) => {
     const todos = Array.from(this.state.todos);
-    todos[idx] = { ...todos[idx], newTodo };
-    this.setState({ todos });
-  }
+    todos[idx] = { ...todos[idx], ...newTodo };
+    this.setState({ todos }, this.setTodos);
+  };
 
   deleteTodo = (idx) => {
-    console.log(idx)
     const todos = Array.from(this.state.todos);
     todos.splice(idx, 1);
-    this.setState({ todos });
-  }
+    this.setState({ todos }, this.setTodos);
+  };
 
   render() {
     return (
       <IonPage>
         <IonContent className="app">
           <div className="ion-padding">
-            <DateBar />
-            <TodoList todos={this.state.todos} editTodo={this.editTodo} deleteTodo={this.deleteTodo} />
+            <TodoList
+              todos={this.state.todos}
+              editTodo={this.editTodo}
+              deleteTodo={this.deleteTodo}
+            />
           </div>
           <AddTodo label="Create a new task" handleSubmit={this.addTodo} />
         </IonContent>
       </IonPage>
     );
   }
-};
+}
 
 export default Home;

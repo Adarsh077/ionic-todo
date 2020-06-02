@@ -1,4 +1,3 @@
-import AddTodo from './AddTodo';
-import DateBar from './DateBar';
-import TodoList from './TodoList';
-export { AddTodo, DateBar, TodoList };
+import AddTodo from "./AddTodo/AddTodo";
+import TodoList from "./TodoList/TodoList";
+export { AddTodo, TodoList };
