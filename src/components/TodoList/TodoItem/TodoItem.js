@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./TodoItem.css";
-import TodoIcon from "./icons/todo.svg";
-import CompletedGif from "./icons/task-done.gif";
+import TodoIcon from "../../../assets/todo.svg";
+import CompletedGif from "../../../assets/task-done.gif";
 
 class TodoItem extends Component {
   constructor() {
@@ -14,6 +14,7 @@ class TodoItem extends Component {
 
   deleteTodo = () => {
     this.setState({ showCompletedIcon: true });
+
     setTimeout(() => {
       this.setState({ deleteAnimation: true });
       setTimeout(this.props.deleteTodo, 700);

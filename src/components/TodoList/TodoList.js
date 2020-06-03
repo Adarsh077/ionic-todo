@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { IonTitle } from "@ionic/react";
 import { v4 as uuid } from "uuid";
 import TodoItem from "./TodoItem/TodoItem";
-import "./TodoList.css";
 import TodoModal from "../TodoModal/TodoModal";
-import Illustration from "./undraw_having_fun_iais.svg";
+import Illustration from "../../assets/break.svg";
+import "./TodoList.css";
 
 class TodoList extends Component {
   constructor() {
