@@ -5,31 +5,27 @@
 .animate_click:active {
   transform: scale(0.95);
 }
+.animate_click:active.animate__fadeOut {
+  transform: scale(1);
+}
 
 @-webkit-keyframes fadeOut {
   0% {
     opacity: 1;
-    height: auto;
-    margin: 35px 0 0 0;
   }
   100% {
     opacity: 0;
-    height: 0px;
-    margin: 0;
   }
 }
 @keyframes fadeOut {
   0% {
     opacity: 1;
-    height: auto;
-    margin: 35px 0 0 0;
   }
   100% {
     opacity: 0;
-    height: 0px;
-    margin: 0;
   }
 }
+
 .animate__fadeOut {
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut;

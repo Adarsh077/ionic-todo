@@ -3,6 +3,14 @@
   margin-bottom: 0px !important;
 }
 
+.illustration {
+  margin-top: 40px;
+}
+
+.illustration h1 {
+  text-align: center;
+}
+
 .todos .title {
   padding: 0px;
   font-weight: bold;

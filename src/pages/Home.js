@@ -2,9 +2,9 @@ import { IonContent, IonPage } from "@ionic/react";
 import React, { Component } from "react";
 import { TodoList, AddTodo } from "../components";
 import "./Home.css";
-import { Plugins } from "@capacitor/core";
+import { Plugins, StatusBarStyle } from "@capacitor/core";
 
-const { Storage } = Plugins;
+const { Storage, StatusBar } = Plugins;
 
 class Home extends Component {
   constructor() {
@@ -12,6 +12,15 @@ class Home extends Component {
     this.state = {
       todos: [],
     };
+
+    StatusBar.setStyle({
+      style: StatusBarStyle.Dark,
+    });
+
+    StatusBar.setOverlaysWebView({
+      overlay: true,
+    });
+
     this.getTodos();
   }
 

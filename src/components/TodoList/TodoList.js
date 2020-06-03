@@ -4,6 +4,7 @@ import { v4 as uuid } from "uuid";
 import TodoItem from "./TodoItem/TodoItem";
 import "./TodoList.css";
 import TodoModal from "../TodoModal/TodoModal";
+import Illustration from "./undraw_having_fun_iais.svg";
 
 class TodoList extends Component {
   constructor() {
@@ -20,7 +21,6 @@ class TodoList extends Component {
 
   handleSubmit = (todo) => {
     this.props.editTodo(this.state.idx, todo);
-
     this.setState({ showModal: false, idx: null });
   };
 
@@ -39,12 +39,18 @@ class TodoList extends Component {
               deleteTodo={() => deleteTodo(idx)}
             />
           ))}
+          {todos.length < 1 && (
+            <div className="illustration animate__animated animate__fadeInUp">
+              <img src={Illustration} alt="done" />
+              <h1>Time for some break.</h1>
+            </div>
+          )}
         </div>
         {showModal && (
           <TodoModal
             title="Edit Task"
             todo={todos[this.state.idx]}
-            handleModalHide={this.closeModal}
+            closeModal={this.closeModal}
             handleSubmit={this.handleSubmit}
           />
         )}

@@ -1,18 +1,23 @@
 import React, { Component } from "react";
 import "./TodoItem.css";
 import TodoIcon from "./icons/todo.svg";
+import CompletedGif from "./icons/task-done.gif";
 
 class TodoItem extends Component {
   constructor() {
     super();
     this.state = {
       deleteAnimation: false,
+      showCompletedIcon: false,
     };
   }
 
   deleteTodo = () => {
-    this.setState({ deleteAnimation: true });
-    setTimeout(this.props.deleteTodo, 700);
+    this.setState({ showCompletedIcon: true });
+    setTimeout(() => {
+      this.setState({ deleteAnimation: true });
+      setTimeout(this.props.deleteTodo, 700);
+    }, 2000);
   };
 
   render() {
@@ -20,10 +25,17 @@ class TodoItem extends Component {
     const deleteAnimation = this.state.deleteAnimation && "animate__fadeOut";
 
     return (
-      <div className={`todo-item  animate__animated ${deleteAnimation}`}>
-        <div className="icon" onClick={this.deleteTodo}>
-          <img src={TodoIcon} alt="done" width="100%" height="100%" />
-        </div>
+      <div className={`todo-item animate__animated ${deleteAnimation}`}>
+        {this.state.showCompletedIcon ? (
+          <div className="completed-icon" onClick={this.deleteTodo}>
+            <img src={CompletedGif} alt="done" width="100%" height="100%" />
+          </div>
+        ) : (
+          <div className="icon" onClick={this.deleteTodo}>
+            <img src={TodoIcon} alt="done" width="100%" height="100%" />
+          </div>
+        )}
+
         <div className="label animate_click" onClick={editTodo}>
           <span>{task}</span>
           {note && <div className="note">{note}</div>}

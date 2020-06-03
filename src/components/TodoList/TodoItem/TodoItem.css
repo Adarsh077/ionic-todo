@@ -5,8 +5,13 @@
 }
 
 .todo-item .icon {
-  width: 18px;
-  height: 18px;
+  width: 27.5px;
+  height: 20px;
+}
+
+.completed-icon {
+  width: 27.5px;
+  height: 25px;
 }
 
 .todo-item .label {
@@ -27,13 +32,4 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   color: rgba(0, 0, 0, 0.54);
-}
-.animate__fadeOut .icon {
-  height: 0% !important;
-}
-.animate__fadeOut .label {
-  height: 0% !important;
-}
-.animate__fadeOut .note {
-  margin-top: 0 !important;
 }
