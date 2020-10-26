@@ -14,7 +14,7 @@ class Home extends Component {
     };
 
     StatusBar.setStyle({
-      style: StatusBarStyle.Dark,
+      style: StatusBarStyle.Light,
     });
 
     StatusBar.setOverlaysWebView({

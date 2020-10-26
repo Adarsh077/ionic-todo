@@ -35,7 +35,7 @@ export default class extends Component {
           <div className="backdrop" onClick={this.handleModalHide}></div>
           <div
             className={`addtodo-modal animate__animated ${
-              showBounceout ? "animate__bounceOutDown" : "animate__bounceInUp"
+              showBounceout ? "animate__bounceOut" : "animate__bounceIn"
             }`}
           >
             <IonTitle className="title">{this.props.title}</IonTitle>
